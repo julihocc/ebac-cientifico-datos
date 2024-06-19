@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <base target="_blank">
+  <style>
+/* latin */
+@font-face {
+  font-family: 'Comic Neue';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/4UaHrEJDsxBrF37olUeD96rp57F2IwM.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Lexend Deca';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/K2FifZFYk-dHSE0UPPuwQ7CrD94i-NCKm-U48M1wqxnDirZPl3v-.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin */
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url(fonts/pxiEyp8kv8JHgFVrJJfecnFHGPc.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  --fg: #000; /* foreground  */
+  --bg: #fff; /* background  */
+  --bd: #000; /* border  */
+  --lk: #006fa5; /* link */
+  --lkv: #d33bf0; /* link visited */
+  --hg: #ffff81; /* highlight  */
+}
+html {
+  overflow: overlay;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 30px auto 0 auto;
+  padding: 10px;
+  position: relative;
+
+  color: var(--fg);
+  border-color: var(--bd);
+  background-color: var(--bg);
+}
+body[data-mode$="dark"] {
+  --lk: #0096de;
+}
+body[data-mode="light"] {
+  color-scheme: light;
+  --fg: #222;
+  --bd: #222;
+  --bg: whitesmoke;
+}
+body[data-mode="dark"] {
+  color-scheme: dark;
+  --fg: #eee;
+  --bd: #eee;
+  --bg: #333;
+}
+body[data-mode="sepia"] {
+  color-scheme: light;
+  --fg: #5b4636;
+  --bd: #5b4636;
+  --bg: #f4ecd8;
+}
+body[data-mode="solarized-light"] {
+  color-scheme: light;
+  --fg: #586e75;
+  --bd: #586e75;
+  --bg: #fdf6e3;
+}
+body[data-mode="nord-light"] {
+  color-scheme: light;
+  --fg: #2e3440;
+  --bd: #2e3440;
+  --bg: #e5e9f0;
+}
+body[data-mode="groove-dark"] {
+  color-scheme: dark;
+  --fg: #cec4ac;
+  --bd: #cec4ac;
+  --bg: #282828;
+}
+body[data-mode="solarized-dark"] {
+  color-scheme: dark;
+  --fg: #839496;
+  --bd: #839496;
+  --bg: #002b36;
+}
+body[data-mode="nord-dark"] {
+  color-scheme: dark;
+  --fg: #e5e9f0;
+  --bd: #e5e9f0;
+  --bg: #2e3440;
+}
+
+@media print {
+  body[data-mode] {
+    --fg: #000;
+    --bd: #000;
+    --bg: #fff;
+
+    width: unset;
+    padding: 0;
+    margin: 0;
+  }
+}
+body[data-loaded=true] {
+  
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+img:not([width])[src$=".svg"] {
+  max-width: 100px;
+}
+body[data-images=false] canvas,
+body[data-images=false] svg,
+body[data-images=false] img {
+  display: none;
+}
+svg:not([width]):not([height]) {
+  max-width: 25vmin;
+}
+a {
+  color: var(--lk);
+  text-decoration: none;
+}
+a:visited {
+  color: var(--lkv);
+}
+
+hr {
+  background-color: var(--bd);
+  height: 1px;
+  border: 0;
+}
+#reader-domain {
+  font-family: Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  border-bottom-color: currentcolor;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  display: inline-block;
+  direction: ltr;
+}
+#reader-domain > span:first-child {
+  font-size: 1.1em;
+}
+#reader-domain > span:last-child {
+  font-size: 0.8em;
+}
+#reader-title {
+  font-size: 1.6em;
+  line-height: 1.25em;
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+}
+#reader-credits,
+#doi,
+#published-time,
+#reader-estimated-time {
+  font-size: 0.85em;
+  line-height: 1.48em;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+#reader-credits:not(:empty)::after {
+  content: ' ⋮ ';
+}
+#published-time:not(:empty)::before {
+  content: ' ⋮ ';
+}
+#doi-json {
+  overflow: hidden;
+}
+#doi-json code {
+  overflow: auto;
+  max-height: 400px;
+}
+#published-time:empty,
+#reader-credits:empty {
+  display: none;
+}
+mark.hghlght {
+  background-color: var(--hg);
+}
+body:not([data-columns="1"]) .page :is(h1, h2) {
+  column-span: all;
+  background-color: rgba(125, 125, 125, 0.1);
+  padding: 10px;
+}
+.hidden {
+  display: none;
+}
+</style>
+  <style id="user-css">body {
+  padding-bottom: 64px;
+}
+pre {
+  white-space: pre-wrap;
+}
+pre code {
+  background-color: #eff0f1;
+  color: #393318;
+  font-family: monospace;
+  display: block;
+  padding: 5px 10px;
+}
+body[data-mode="dark"] pre code {
+  background-color: #585858;
+  color: #e8e8e8;
+}
+
+/* CSS for sans-serif fonts */
+body[data-font=sans-serif] {}
+/* CSS for serif fonts */
+body[data-font=serif] {}
+
+/* CSS for "sepia" theme */
+body[data-mode=sepia] {}
+/* CSS for "light" theme */
+body[data-mode=light] {}
+/* CSS for "dark" theme */
+body[data-mode=dark] {}</style>
+<title>Práctica — EBAC LMS</title><title>Práctica — EBAC LMS :: Reader View</title></head>
+<body tabindex="1" data-images="true" data-mode="sepia" data-font="sans-serif" data-columns="1" data-loaded="true">
+  <span></span> <!-- for IntersectionObserver -->
+  <a id="reader-domain" href="https://lms.ebac.mx/lesson/dfae3cd0-1d1c-469e-84ff-24d3983efbf5">
+    <span>lms.ebac.mx</span>
+    <span>/lesson/dfae3cd0-1d1c-469e-84ff-24d3983efbf5</span>
+  </a>
+  <h1 dir="auto" id="reader-title">Práctica — EBAC LMS</h1>
+  <span dir="auto" id="reader-credits"></span>
+  <span dir="auto" id="reader-estimated-time">3-4 minutes</span>
+  <span dir="auto" id="published-time"></span>
+  <hr>
+  <div id="readability-page-1" class="page"><div data-v-08e5181e="" data-v-a52a1564="" id="contentBlock"><div data-v-77bb5218="" data-v-08e5181e="" data-test="lesson-block-text"><p><span>¡Bienvenidos a la actividad práctica del módulo!&nbsp;</span></p><p><strong>Antes de empezar</strong></p><p><span>El objetivo de esta actividad es que efectúes un análisis de clasificación mediante Máquinas de soporte vectorial que permita desarrollar un modelo predictivo basado en distintas métricas aplicadas a una base de datos grande.</span></p><p><span>Entregable: Un Jupyter Notebook (archivo de extensión .ipynb), archivo PDF y capturas de pantalla en el espacio de respuesta que muestren tanto el código desarrollado como la solución al problema planteado, incluyendo los comentarios que sean pertinentes a las preguntas que se plantean. Entregas sin estos elementos no serán calificadas.</span></p><p><span>¡Buena suerte!</span></p><p><strong>Paso a paso:</strong></p><ul><li><span>Considere la base de datos “</span><a href="https://drive.google.com/file/d/1NlY7I_XVgZWCj6A-BJKlL2076WKOyPqc/view?usp=sharing" rel="noopener noreferrer" target="_blank">recursos_humanos.csv</a><span>” sobre empleados que abandonan una empresa. </span></li></ul><p><img src="https://static.lms.ebac.mx/content-files/3f7753a4-3ada-441d-9d37-f51639e7e608/original.png" width="791" height="120.61575579751131"></p><p><span>El objetivo es analizar porqué los empleados deciden irse con la competencia y éste podría ser un desafío serio para un departamento de recursos humanos, el cual se podría abordar mediante modelos predictivos de Machine Learning. Las variables manejadas son:</span></p><ul><li><span>satisfaction_level: Nivel de satisfacción.&nbsp;</span></li><li><span>last_evaluation: Puntaje obtenido en la ultima evaluación.&nbsp;</span></li><li><span>average_montly_hours: Promedio de horas trabajadas al mes.&nbsp;</span></li><li><span>time_spend_company: Tiempo del usuario en la compañía.&nbsp;</span></li><li><span>work_accident: Si el empleado ha tenido algún accidente laboral (1 = Sí, 0 = No).&nbsp;</span></li><li><span>promotion_last_5years: Si el empleado ha sido promovido en los últimos 5 años.&nbsp;</span></li><li><span>sales: Departamento donde trabaja.&nbsp;</span></li><li><span>salary: Categoría del salario.&nbsp;</span></li><li><span>left: Variable a predecir y si el empleado dejó o no la empresa (1 = Sí, 0 = No).</span></li><li><span>Cargue la base de datos en Python y asegúrese de re-codificar las variables categóricas de manera pertinente antes de iniciar su análisis (Sugerencia: Use “pd.get_dummies”)&nbsp;</span></li><li><span>Use el método de Máquinas de soporte vectorial para generar un modelo predictivo. Para dicho fin, pruebe los 4 diferentes tipos de Kernel discutidos en esta lección. En cada caso elabore un mapa de calor para las matrices de confusión así como un reporte de clasificación detallado. Interprete verbalmente sus indicadores.&nbsp;</span></li><li><span>¿Cuál resultó ser el modelo predictivo más adecuado? Explique su razonamiento.&nbsp;</span></li><li><span>¿Qué resultado pronosticaría para un empleado con los siguientes indicadores? </span><img src="https://static.lms.ebac.mx/content-files/979603c4-a06c-4ddf-9f8c-2da6c45e1afc/original.png" width="773" height="51.20906391402715"></li><li><span>Recuerda guardar el archivo en formato notebook (.ipynb), archivo PDF y capturas de pantalla,</span></li><li><span>Titula el archivo como 'Tarea M22-CD – TU NOMBRE'.</span></li></ul><p><strong>Archivo final</strong></p><p><strong>¿Cómo presentar su entrega?</strong></p><p><span>Un Jupyter Notebook (archivo de extensión .ipynb), archivo PDF y capturas de pantalla en el espacio de respuesta que muestren tanto el código desarrollado como la solución al problema planteado, incluyendo los comentarios que sean pertinentes a las preguntas que se plantean. Entregas sin estos elementos no serán calificadas.</span></p><p><strong>Tiempo estimado de resolución: </strong><span>40 minutos</span></p></div><div data-v-631f8b31="" data-v-08e5181e="" data-test="lesson-block-task"><!----> <div data-v-c75d564e="" data-v-1c838732="" data-v-631f8b31=""><p> 
+  El tutor revisará tu actividad en un plazo de 3 días laborables.
+  </p> <p>
+    La calificación mínima para aprobar esta actividad es 70. Si no alcanzas esta calificación, puedes volver a hacerla
+  </p></div> <div data-v-02341953="" data-v-c95dcbc0="" data-v-1dfcff0f="" data-test="homework-container-answer-editor" drag-and-drop="" multiple="multiple" max-file-size="524288000" progress-percent="0" progress-files="1" disable-send-btn="true" delay-loading-state-for-button="true" data-v-631f8b31=""><!----> <p>
+          Adjuntar archivo de máximo 500 MB
+        </p></div> <!----></div> <!----> <div data-v-ffb9e4d8="" data-v-2f5744d6="" data-v-6487bcaf="" data-v-08e5181e="" id="tickets-block" data-test="tickets-container"> <p><span data-v-2f5744d6="" data-v-ffb9e4d8="">¿Tienes preguntas sobre esta lección?</span> <span data-v-2f5744d6="" data-v-ffb9e4d8="">¡Pregúntale a&nbsp;un&nbsp;tutor!</span></p></div>  <div data-v-007963cc="" data-v-08e5181e="" data-test="lecture-bottom-navigation"><p>
+    Siguiente:
+  </p> <p>
+    Recapitula el trayecto
+  </p>  <p> <span data-v-32fee130="">
+      Completa la tarea para completar la lección
+    </span></p></div> <div data-v-5b3bfc9a="" data-v-08e5181e=""><p>
+      ¿Te gustó el contenido de esta actividad?
+    </p> </div></div></div>
+  <span></span> <!-- for IntersectionObserver -->
+  
+  
+  
+  
+
+
+<style id="note-styling">
+    .note {
+      position: absolute;
+      z-index: 10;
+      border: none;
+      outline: none;
+      font-family: inherit;
+      font-size: inherit;
+      padding: 5px;
+      min-width: 32px;
+      min-height: 32px;
+    }
+    .note:focus {
+      z-index: 11;
+    }
+    .note[type="0"] {
+      background-color: #fff740;
+      color: #2c2c2d;
+    }
+    .note[type="0"]::placeholder {
+      color: #868226;
+    }
+    .note[type="1"] {
+      background-color: #feff9c;
+      color: #2c2c2d;
+    }
+    .note[type="1"]::placeholder {
+      color: #6d6d3d;
+    }
+    .note[type="2"] {
+      background-color: #ff65a3;
+      color: #2c2c2d;
+    }
+    .note[type="2"]::placeholder {
+      color: #65263f;
+    }
+    .note[type="3"] {
+      background-color: #ff7eb9;
+      color: #2c2c2d;
+    }
+    .note[type="3"]::placeholder {
+      color: #562b3f;
+    }
+    .note[type="4"] {
+      background-color: #7afcff;
+      color: #295c5d;
+    }
+    .note[type="4"]::placeholder {
+      color: #377677;
+    }</style></body><style>body {
+      font-size:  15px;
+      font-family: Helvetica, Arial, sans-serif;
+      width: 600px;
+    }
+    p {
+      text-align: justify
+    }
+    .page {
+      line-height: 22.5px;
+      column-count: unset;
+    }
+    h1, h2, h3 {
+      line-height: initial;
+    }</style></html>
