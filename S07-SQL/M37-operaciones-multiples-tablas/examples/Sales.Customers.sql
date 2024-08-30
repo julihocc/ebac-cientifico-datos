@@ -1,0 +1,8 @@
+SELECT TOP (1000) [CustomerID]
+      ,[PersonID]
+      ,[StoreID]
+      ,[TerritoryID]
+      ,[AccountNumber]
+      ,[rowguid]
+      ,[ModifiedDate]
+  FROM [AdventureWorks2022].[Sales].[Customer]
