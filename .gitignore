@@ -113,6 +113,8 @@ dmypy.json
 # *.log
 # *.txt
 # *.sqlite
+*.dat
+*.tar
 
 # Model files
 *.h5
@@ -136,3 +138,4 @@ dmypy.json
 *.html
 
 *.db
+Projects/P04-movie-data-analysis/Base de datos_dvdrental.zip
