@@ -40,3 +40,23 @@ Author: Juliho Castillo Colmenares
 ### Exercise 10
 
 ![exercise-10]({BB656E85-F5E5-4365-8F2E-F350F307B826}.png)
+
+### Exercise 11
+
+![exercise-11]({D73EB5E2-04A1-4A42-ACB3-7BD77613666C}.png)
+
+### Exercise 12
+
+![exercise-12]({56BAE756-A837-4A43-AEBB-00E8B76EBC8E}.png)
+
+### Exercise 13
+
+![exercise-13]({13B05D86-2950-4A14-9492-ED14AD84FD6A}.png)
+
+### Exercise 14
+
+![exercise-14]({DB182305-9494-4168-B973-B2AAB9C740DE}.png)
+
+### Exercise 15
+
+![exercise-15]({A0FA33DC-AA45-4897-9F4D-BD0F4A94BAC2}.png)

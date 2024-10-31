@@ -34,3 +34,39 @@ JOIN film ON inventory.film_id = film.film_id
 GROUP BY film.title
 ORDER BY rental_count DESC
 LIMIT 1;
+
+-- 11. ¿Qué peliculas no se han rentado?
+SELECT title 
+FROM film 
+WHERE film_id NOT IN (SELECT film_id FROM inventory WHERE inventory_id IN (SELECT inventory_id FROM rental));
+
+-- 12. ¿Qué clientes no han rentado ninguna película?
+SELECT first_name, last_name 
+FROM customer 
+WHERE customer_id NOT IN (SELECT customer_id FROM rental);
+
+-- 13. ¿Qué actores han actuado en más de 30 películas?
+SELECT actor.first_name, actor.last_name, COUNT(film_actor.film_id) AS film_count
+FROM actor
+JOIN film_actor ON actor.actor_id = film_actor.actor_id
+GROUP BY actor.actor_id
+HAVING COUNT(film_actor.film_id) > 30;
+
+-- 14. Muestra las ventas totales por tienda
+SELECT store.store_id, SUM(payment.amount) AS total_sales
+FROM payment
+JOIN rental ON payment.rental_id = rental.rental_id
+JOIN inventory ON rental.inventory_id = inventory.inventory_id
+JOIN store ON inventory.store_id = store.store_id
+GROUP BY store.store_id;
+
+-- 15. Muestra los clientes que rentaron una pelicula más de una vez
+WITH rental_counts AS (
+    SELECT customer_id, inventory_id, COUNT(*) AS rental_count
+    FROM rental
+    GROUP BY customer_id, inventory_id
+)
+SELECT customer.first_name, customer.last_name, rental_counts.rental_count
+FROM rental_counts
+JOIN customer ON rental_counts.customer_id = customer.customer_id
+WHERE rental_counts.rental_count > 1;
