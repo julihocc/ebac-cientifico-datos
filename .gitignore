@@ -139,3 +139,6 @@ dmypy.json
 
 *.db
 Projects/P04-movie-data-analysis/Base de datos_dvdrental.zip
+
+*:Zone.Identifier
+*:shield
