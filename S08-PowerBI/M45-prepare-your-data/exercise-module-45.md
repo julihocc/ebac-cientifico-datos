@@ -1,0 +1,17 @@
+# Module 45: Prepare your data
+
+- Author: Juliho David Castillo Colmenares
+
+![t_countries]({3F17701F-64C7-4149-9A48-F3B17A72FB4A}.png)
+
+![t_costumer]({8115A027-B000-4550-8CA5-292F4ECD4633}.png)
+
+![t_product]({36D5DACE-184F-4B71-8562-32C89DD4C3E1}.png)
+
+![t_store]({46F6762C-5161-4EA0-801B-4BBB80D7A7F2}.png)
+
+![Sales 2019]({3C81E5F2-C837-4FC7-A4A4-D863C6AC3881}.png)
+
+![Sales 2020-2021]({BAC7387A-7E94-4D0B-A31D-5E949A78DFCE}.png)
+
+![Sales]({BB192EA5-9C4A-403E-9746-AF973C5A90F5}.png)
